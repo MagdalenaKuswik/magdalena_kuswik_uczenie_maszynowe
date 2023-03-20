@@ -12,7 +12,7 @@ print(frame.shape[1])
 
 print(frame.info())
 
-pca = PCA(svd_solver= 'full', n_components= 0.80)
+pca = PCA(svd_solver= 'full', n_components= 0.90)
 glowne = pca.fit_transform(frame)
 glowneFrame = pd.DataFrame(data=glowne)
 
@@ -22,7 +22,7 @@ print(glowneFrame.shape[1])
 
 print(glowneFrame.info())
 
-x_train, x_test, y_train, y_test = train_test_split(glowneFrame, creditScore, test_size= 0.4, random_state=75)
+x_train, x_test, y_train, y_test = train_test_split(glowneFrame, creditScore, test_size= 0.5, random_state=80)
 
 print(x_train)
 print(x_test)
